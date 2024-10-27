@@ -1,0 +1,82 @@
+/* CSS for the infinite scrolling images with hover to stop and rounded corners */
+
+.scrolling-images-container {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 20px;
+    position: relative;
+}
+
+.scrolling-images {
+    display: flex;
+    animation: scroll-left 10s linear infinite;
+    gap: 20px; /* Adds space between the images */
+}
+
+.scrolling-image {
+    height: 150px;
+    flex-shrink: 0;
+    width: auto;
+    object-fit: cover;
+    border-radius: 15px; /* Adds rounded corners to images */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adds subtle shadow to images for a cleaner look */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.scrolling-images-container:hover .scrolling-images {
+    animation-play-state: paused; /* Pauses the animation on hover */
+}
+
+.scrolling-image:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); /* Slightly increased shadow on hover for emphasis */
+}
+
+/* Keyframe for the scroll animation */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Styles for the scrolling logos */
+.scrolling-logos-container {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 20px;
+    position: relative;
+}
+
+.scrolling-logos {
+    display: flex;
+    animation: scroll-right 20s linear infinite;
+    gap: 40px; /* Adds space between the logos */
+}
+
+.scrolling-logo {
+    height: 60px;
+    width: 180px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.scrolling-logos-container:hover .scrolling-logos {
+    animation-play-state: paused;
+}
+
+.scrolling-logo:hover {
+    transform: scale(1.1);
+}
+
+/* Keyframe for the scroll animation */
+@keyframes scroll-right {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
